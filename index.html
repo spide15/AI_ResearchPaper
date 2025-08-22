@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact of AI on Carbon Footprint Reduction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-value {
+            font-size: 3rem;
+            line-height: 1;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #4A5568;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c] mb-4">Impact of AI on Carbon Footprint Reduction</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Artificial Intelligence presents a paradox in the climate transition: it's a powerful tool for decarbonization but also a growing source of emissions.</p>
+        </header>
+
+        <main>
+            <section id="footprint" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#ff6361]">The Carbon Cost of Computation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-center">Data Center Energy Surge</h3>
+                        <p class="text-center text-gray-600 mb-4">Global data center electricity use is projected to double by 2026, largely driven by AI's intensive processing demands.</p>
+                        <div class="text-center">
+                            <span class="kpi-value font-bold text-[#ff6361]">160%</span>
+                            <p class="text-gray-600">Projected increase in data center power demand from AI alone.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-center">The Thirst for Cooling</h3>
+                        <p class="text-center text-gray-600 mb-4">AI's hardware requires vast amounts of water for cooling, straining local resources.</p>
+                        <div class="text-center">
+                            <span class="text-5xl">💧</span>
+                            <p class="mt-2 text-lg font-semibold">≈ 2x Delhi & Mumbai  annual water use <br>5.2 billion cubic meters.</p>
+                            <p class="text-gray-600">Projected annual water consumption of AI by 2027.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2 lg:col-span-1">
+                        <h3 class="text-xl font-semibold mb-4 text-center">Embodied Emissions & E-Waste</h3>
+                        <p class="text-center text-gray-600 mb-4">The manufacturing and disposal of AI hardware contribute significantly to its lifecycle emissions and the growing e-waste crisis.</p>
+                         <div class="text-center">
+                            <span class="kpi-value font-bold text-[#ff6361]">82M</span>
+                            <p class="text-gray-600">Tonnes of e-waste projected annually by 2030.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="net-impact" class="mb-16 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-3xl font-bold text-center mb-2 text-[#58508d]">The Net Impact: A Positive Outlook</h2>
+                 <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Despite its footprint, AI's potential to reduce emissions far outweighs its costs. Projections for 2035 show a significant net positive impact on global decarbonization efforts.</p>
+                <div class="chart-container mx-auto h-96 md:h-[500px] max-w-4xl">
+                    <canvas id="netImpactChart"></canvas>
+                </div>
+                 <p class="text-center text-sm text-gray-500 mt-4">This chart compares the projected annual emissions AI could add versus the emissions it could reduce by 2035. The potential net savings demonstrate AI's value as a critical climate solution.</p>
+            </section>
+
+
+            <section id="solutions" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">The Green Dividend: AI in Action</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Across key sectors, AI is already driving significant emissions reductions by optimizing complex systems, enhancing efficiency, and enabling smarter resource management.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Revolutionizing the Energy Sector</h3>
+                        <p class="text-gray-600 mb-4">AI-powered smart grids are essential for integrating renewable energy sources. By forecasting supply and demand, AI improves grid stability and boosts the economic value of clean energy.</p>
+                        <div class="chart-container h-64">
+                            <canvas id="energyChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-4">AI's predictive capabilities increase the value of wind energy by optimizing its delivery to the grid.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Optimizing Transportation & Logistics</h3>
+                        <p class="text-gray-600 mb-4">AI algorithms optimize delivery routes in real-time, analyzing traffic and weather to cut fuel consumption. This leads to substantial emissions reductions in the supply chain.</p>
+                        <div class="chart-container h-64">
+                            <canvas id="transportChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-4">AI-driven logistics can significantly decrease greenhouse gas emissions from supply chains.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Advancing Sustainable Manufacturing</h3>
+                        <p class="text-gray-600 mb-4">In manufacturing, AI enables a circular economy by designing for recyclability and optimizing recycling streams. Remanufacturing, powered by AI, drastically cuts the carbon footprint of industrial equipment.</p>
+                         <div class="chart-container h-64">
+                            <canvas id="manufacturingChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-4">Remanufacturing a robot with AI assistance reduces its carbon footprint compared to building a new one.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Enhancing Agriculture & Food Systems</h3>
+                        <p class="text-gray-600 mb-4">Precision agriculture uses AI to analyze data from drones and sensors, allowing for the precise application of water and fertilizers, which reduces waste and environmental impact.</p>
+                        <div class="chart-container h-64">
+                            <canvas id="agricultureChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-4">AI enables significant resource savings in agriculture, a critical step toward global food security.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="strategy" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#ffa600]">Strategic Imperatives: A Call to Intentionality</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">To ensure AI is a net positive for the climate, a coordinated strategy is essential. This involves mitigating AI's own footprint while accelerating its high-impact applications through smart policy and investment.</p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="text-center p-6 border-2 border-[#ffa600] rounded-lg w-full md:w-1/3">
+                        <div class="text-4xl mb-4">🖥️</div>
+                        <h3 class="text-xl font-semibold mb-2">Mitigate AI's Footprint</h3>
+                        <p class="text-gray-600">Invest in energy-efficient hardware, power data centers with renewable energy, and optimize algorithms to reduce computational demand.</p>
+                    </div>
+
+                    <div class="flow-arrow hidden md:flex">&rarr;</div>
+
+                    <div class="text-center p-6 border-2 border-[#ffa600] rounded-lg w-full md:w-1/3">
+                         <div class="text-4xl mb-4">🚀</div>
+                        <h3 class="text-xl font-semibold mb-2">Accelerate Climate Action</h3>
+                        <p class="text-gray-600">Direct public and private investment toward high-impact sectors like energy and transport. Foster collaboration to share data and standards.</p>
+                    </div>
+
+                     <div class="flow-arrow hidden md:flex">&rarr;</div>
+
+                    <div class="text-center p-6 border-2 border-[#ffa600] rounded-lg w-full md:w-1/3">
+                         <div class="text-4xl mb-4">⚖️</div>
+                        <h3 class="text-xl font-semibold mb-2">Ensure Good Governance</h3>
+                        <p class="text-gray-600">Implement policies for transparency in energy use, manage the "rebound effect," and work to close the digital divide in developing nations.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t">
+            <p class="text-gray-500">Data synthesized from the Research paper : " Impact of AI  on Carbon Footprint Reduction"<br>By Deep Gada .</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabels(label) {
+            const maxLength = 16;
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const energeticPlayfulPalette = {
+            primary: '#003f5c',
+            secondary: '#58508d',
+            accent1: '#bc5090',
+            accent2: '#ff6361',
+            accent3: '#ffa600',
+        };
+
+        const netImpactData = {
+            labels: ['Potential Annual Reductions by 2035', 'Projected Annual Footprint by 2035'],
+            datasets: [{
+                label: 'Low Estimate (GtCO2e)',
+                data: [3.2, 0.4],
+                backgroundColor: energeticPlayfulPalette.primary,
+                borderColor: energeticPlayfulPalette.primary,
+                borderWidth: 1
+            }, {
+                label: 'High Estimate (GtCO2e)',
+                data: [5.4, 1.6],
+                backgroundColor: energeticPlayfulPalette.accent2,
+                borderColor: energeticPlayfulPalette.accent2,
+                borderWidth: 1
+            }]
+        };
+        new Chart(document.getElementById('netImpactChart'), {
+            type: 'bar',
+            data: netImpactData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Gigatonnes of CO2 Equivalent (GtCO2e)'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Projected Net Impact of AI on Global Emissions by 2035',
+                        font: { size: 16 }
+                    },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('energyChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Value Added by AI', 'Original Value'],
+                datasets: [{
+                    data: [20, 80],
+                    backgroundColor: [energeticPlayfulPalette.primary, '#E0E0E0']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: '20% Boost in Wind Energy Value' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('transportChart'), {
+            type: 'bar',
+            data: {
+                labels: ['GHG Emissions Reduction'],
+                datasets: [{
+                    label: 'Low End',
+                    data: [5],
+                    backgroundColor: energeticPlayfulPalette.secondary
+                }, {
+                    label: 'High End',
+                    data: [10],
+                    backgroundColor: energeticPlayfulPalette.accent1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, max: 12, title: { display: true, text: 'Percentage (%)' } } },
+                plugins: {
+                    title: { display: true, text: '5-10% Supply Chain Emission Cut' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('manufacturingChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Carbon Footprint Reduction', 'Remaining Footprint'],
+                datasets: [{
+                    data: [75, 25],
+                    backgroundColor: [energeticPlayfulPalette.accent2, '#E0E0E0']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: '75% Footprint Cut from Remanufacturing' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('agricultureChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Water Savings', 'Fertilizer Savings', 'Pesticide Savings'],
+                datasets: [{
+                    label: 'Max Savings (%)',
+                    data: [30, 20, 20],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 166, 0, 0.2)',
+                    borderColor: energeticPlayfulPalette.accent3,
+                    pointBackgroundColor: energeticPlayfulPalette.accent3,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 35
+                    }
+                },
+                plugins: {
+                    title: { display: true, text: 'Up to 30% Resource Savings' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
